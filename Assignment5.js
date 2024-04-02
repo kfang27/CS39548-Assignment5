@@ -72,3 +72,19 @@ function min(num1, num2) {
     }
 }
 console.log(min(1,2));
+
+function isEven(num){
+    if (num == 0){
+        return true;
+    }
+    if (num == 1){
+        return false;
+    }
+    else if (num < 0){
+        return isEven(-(num));
+    }
+    else{
+        return isEven(num - 2);
+    }
+}
+console.log(isEven(-1));
