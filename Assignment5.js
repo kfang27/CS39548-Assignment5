@@ -88,3 +88,33 @@ function isEven(num){
     }
 }
 console.log(isEven(-1));
+
+// Bean Counting
+function countsB(string) {
+    /*
+    let B_counter = 0;
+
+    for (let i = 0; i < string.length; i++){
+        if (string[i] == 'B'){
+            B_counter += 1;
+            
+        }
+    }
+    return B_counter
+    */
+   return countChar(string, 'B');
+}
+console.log("Number of Bs:", countsB("aaaaBBBBBBBB"))
+
+function countChar(string, character){
+    let char_counter = 0;
+    
+    for (let i=0; i < string.length; i++){
+        if (string[i] == character){
+            char_counter += 1;
+        }
+    }
+
+    return char_counter;
+}
+console.log("number of char:", countChar("kakkerlak", "k"));
