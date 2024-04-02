@@ -71,7 +71,7 @@ function min(num1, num2) {
         return num2;
     }
 }
-console.log(min(1,2));
+//console.log(min(1,2));
 
 function isEven(num){
     if (num == 0){
@@ -87,7 +87,7 @@ function isEven(num){
         return isEven(num - 2);
     }
 }
-console.log(isEven(-1));
+//console.log(isEven(-1));
 
 // Bean Counting
 function countsB(string) {
@@ -104,7 +104,7 @@ function countsB(string) {
     */
    return countChar(string, 'B');
 }
-console.log("Number of Bs:", countsB("aaaaBBBBBBBB"))
+//console.log("Number of Bs:", countsB("aaaaBBBBBBBB"))
 
 function countChar(string, character){
     let char_counter = 0;
@@ -117,4 +117,25 @@ function countChar(string, character){
 
     return char_counter;
 }
-console.log("number of char:", countChar("kakkerlak", "k"));
+//console.log("number of char:", countChar("kakkerlak", "k"));
+
+// The Sum of a Range 
+function range(start, end){
+    let arr = [];
+    for (let i = start; i <= end; i++){
+        arr.push(i);
+    }
+    return arr;
+}
+console.log(range(1,10))
+
+function sum(arr){
+    total = 0;
+    
+    for (let i=0; i <= arr.length - 1; i++){
+        total += arr[i];
+    }
+    return total
+}
+console.log(sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+console.log(sum(range(1, 10)));
