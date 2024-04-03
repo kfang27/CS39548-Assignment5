@@ -120,14 +120,23 @@ function countChar(string, character){
 //console.log("number of char:", countChar("kakkerlak", "k"));
 
 // The Sum of a Range 
-function range(start, end){
+function range(start, end, step = 1){
     let arr = [];
-    for (let i = start; i <= end; i++){
-        arr.push(i);
+    if (end > start){
+        for (let i = start; i <= end; i += step){
+            arr.push(i);
+        }
+    }
+    
+    else {
+        for (let i = start; i >= end; i += step){
+            arr.push(i);
+        }
     }
     return arr;
 }
-console.log(range(1,10))
+console.log(range(1, 10, 2))
+console.log(range(5, 2, -1))
 
 function sum(arr){
     total = 0;
@@ -137,5 +146,5 @@ function sum(arr){
     }
     return total
 }
-console.log(sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
 console.log(sum(range(1, 10)));
