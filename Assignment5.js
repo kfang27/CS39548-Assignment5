@@ -148,16 +148,18 @@ function sum(arr){
 }
 //console.log(sum(range(1, 10)));
 
+// Reversing an Array
 function reverseArray(arr){
     new_arr = [];
 
     for (let i=0; i <= arr.length - 1; i++){
+        // unshift adds the element to the front/left side of array while push() adds it to the back/right side
         new_arr.unshift(arr[i]);
     }
     return new_arr
 }
 let myArray = ["A", "B", "C", "D"];
-console.log(reverseArray(myArray));
+//console.log(reverseArray(myArray));
 
 function reverseArrayInPlace(arr){
     for (let i=0; i < Math.floor(arr.length / 2); i++ ){
@@ -169,4 +171,48 @@ function reverseArrayInPlace(arr){
 }
 let arrayValue = [1, 2, 3, 4, 5];
 reverseArrayInPlace(arrayValue);
-console.log(arrayValue);
+//console.log(arrayValue);
+
+// A List
+function arrayToList(arr){
+    let list = null;
+
+    for (let i = arr.length -1; i >= 0; i--){
+        list = {value: arr[i], rest: list};
+    }
+    return list;
+}
+console.log(arrayToList([10, 20]));
+// → {value: 10, rest: {value: 20, rest: null}}
+
+function listToArray(list){
+    let arr = [];
+    for (let node = list; node; node = node.rest) {
+        arr.push(node.value);
+      }
+      return arr;
+}
+console.log(listToArray(arrayToList([10, 20, 30])));
+// → [10, 20, 30]
+
+function prepend(value, list) {
+    return {value, rest: list};
+}
+console.log(prepend(10, prepend(20, null)));
+// → {value: 10, rest: {value: 20, rest: null}}
+
+function nth(list, n) {
+    if (!list) {
+        return undefined;
+    }
+    else if (n == 0){
+        return list.value;
+    }
+    else {
+        return nth(list.rest, n - 1);
+    }
+}
+console.log(nth(arrayToList([10, 20, 30]), 1));
+// → 20
+
+// Deep Comparison
