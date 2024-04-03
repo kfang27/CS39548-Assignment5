@@ -135,8 +135,8 @@ function range(start, end, step = 1){
     }
     return arr;
 }
-console.log(range(1, 10, 2))
-console.log(range(5, 2, -1))
+//console.log(range(1, 10, 2))
+//console.log(range(5, 2, -1))
 
 function sum(arr){
     total = 0;
@@ -146,5 +146,27 @@ function sum(arr){
     }
     return total
 }
+//console.log(sum(range(1, 10)));
 
-console.log(sum(range(1, 10)));
+function reverseArray(arr){
+    new_arr = [];
+
+    for (let i=0; i <= arr.length - 1; i++){
+        new_arr.unshift(arr[i]);
+    }
+    return new_arr
+}
+let myArray = ["A", "B", "C", "D"];
+console.log(reverseArray(myArray));
+
+function reverseArrayInPlace(arr){
+    for (let i=0; i < Math.floor(arr.length / 2); i++ ){
+        old_element = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = old_element;
+    }
+    return arr;
+}
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
