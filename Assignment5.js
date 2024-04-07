@@ -1,11 +1,10 @@
+// Chapter 2: Program Structure
 // Looping a triangle
-/*
 for (let string1 = "#"; string1.length <= 7; string1 += "#"){
-    console.log(string1, string1.length);
+    console.log(string1);
 }
 
 // Fizzbuzz
-
 for (let number = 1; number < 101; number += 1){
     if (number % 3 == 0){
         if (number % 5 == 0){
@@ -61,8 +60,9 @@ for (let row_count = 1; row_count <= 8; row_count += 1){
     }
 }
 console.log(final_string)
-*/
 
+// Chapter 3: Functions
+// Minimum
 function min(num1, num2) {
     if (num1 < num2){
         return num1;
@@ -73,6 +73,7 @@ function min(num1, num2) {
 }
 //console.log(min(1,2));
 
+// Recursion
 function isEven(num){
     if (num == 0){
         return true;
@@ -119,6 +120,7 @@ function countChar(string, character){
 }
 //console.log("number of char:", countChar("kakkerlak", "k"));
 
+// Chapter 4: Data Structures: Objects and Arrays
 // The Sum of a Range 
 function range(start, end, step = 1){
     let arr = [];
